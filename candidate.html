@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Candidates | Tshwanelo Placements Pty Ltd</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #004aad;
+      --accent: #f9b233;
+      --bg-light: #f8faff;
+      --text-dark: #222;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-dark);
+      background: var(--bg-light);
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--primary), #0077ff);
+      color: #fff;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary), #0096ff);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 2rem;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: var(--primary);
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .section p {
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .form-grid input,
+    .form-grid textarea,
+    .form-grid select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .form-grid button {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .form-grid button:hover {
+      background: #ffc85c;
+      transform: scale(1.05);
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      text-align: left;
+    }
+
+    .benefit-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.8rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .benefit-card i {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    footer {
+      background: #001f3f;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html"><strong>Tshwanelo Placements</strong></a>
+  </div>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="service.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="candidates.html" class="active">Candidates</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Opportunities for Candidates</h1>
+  <p>Are you looking for meaningful employment or career growth? Tshwanelo Placements connects qualified and reliable talent with trusted employers across South Africa. Submit your profile today and take the first step toward a rewarding placement.</p>
+</section>
+
+<section class="section">
+  <h2>Why Choose Tshwanelo Placements?</h2>
+  <div class="benefits">
+    <div class="benefit-card">
+      <i class="fas fa-handshake"></i>
+      <h4>Trusted Connections</h4>
+      <p>We match you with reputable employers who value your skills and professionalism.</p>
+    </div>
+    <div class="benefit-card">
+      <i class="fas fa-user-tie"></i>
+      <h4>Professional Growth</h4>
+      <p>We help you advance your career with meaningful placements and skill development.</p>
+    </div>
+    <div class="benefit-card">
+      <i class="fas fa-bullseye"></i>
+      <h4>Targeted Placements</h4>
+      <p>We take time to understand your strengths, goals, and preferences to ensure the right fit.</p>
+    </div>
+    <div class="benefit-card">
+      <i class="fas fa-people-arrows"></i>
+      <h4>Personalized Support</h4>
+      <p>We provide guidance, mentorship, and ongoing support throughout your placement journey.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Submit Your CV</h2>
+  <p>Fill out the form below with your professional details and we will contact you with suitable opportunities.</p>
+
+  <form id="candidateForm" class="form-grid">
+    <input type="text" id="candName" name="candName" placeholder="Full Name" required>
+    <input type="email" id="candEmail" name="candEmail" placeholder="Professional Email" required>
+    <input type="tel" id="candPhone" name="candPhone" placeholder="Contact Phone Number" required>
+    <textarea id="candMessage" name="candMessage" placeholder="Brief professional bio and key skills (e.g., Sage proficiency, childcare, cleaning)" rows="4"></textarea>
+    <button type="submit">Submit Your Profile</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; <span id="year"></span> Tshwanelo Placements Pty Ltd. All Rights Reserved.</p>
+  <p><a href="mailto:info@tshwaneloplacements.co.za">info@tshwaneloplacements.co.za</a> | <a href="tel:+27678004100">067 800 4100</a></p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

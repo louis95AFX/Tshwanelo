@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Management Team | Tshwanelo Placements Pty Ltd</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #004aad;
+      --accent: #f9b233;
+      --bg-light: #f8faff;
+      --text-dark: #222;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-dark);
+      background: var(--bg-light);
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--primary), #0077ff);
+      color: #fff;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary), #0096ff);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 2rem;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: var(--primary);
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .team-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem 1rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-card img {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .team-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .team-card p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      background: #001f3f;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html"><strong>Tshwanelo Placements</strong></a>
+  </div>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="service.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="candidates.html">Candidates</a>
+      <a href="management.html" class="active">Management</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Meet Our Management Team</h1>
+  <p>Our leadership is dedicated to excellence, integrity, and empowering both our clients and candidates. Learn about the individuals guiding Tshwanelo Placements to success.</p>
+</section>
+
+<section class="section">
+  <h2>Our CEO & Founder</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <img src="founder.jpg" alt="Rosie Ramorei - CEO">
+      <h3>Rosie Ramorei</h3>
+      <p>Founder & CEO — Driven by a passion for empowering others, Rosie founded Tshwanelo Placements to create fair, dignified, and life-changing employment opportunities. Her leadership is guided by compassion, integrity, and excellence.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section background-light">
+  <h2>Management Philosophy</h2>
+  <p>Our management team is people-focused, prioritizing strong relationships, transparent communication, and ethical decision-making. We believe in mentoring, guidance, and providing a supportive environment for both clients and candidates to thrive.</p>
+</section>
+
+<section class="section">
+  <h2>Key Leadership Values</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <i class="fas fa-handshake" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
+      <h3>Integrity</h3>
+      <p>Every action and decision is guided by honesty and ethical standards.</p>
+    </div>
+    <div class="team-card">
+      <i class="fas fa-users" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
+      <h3>Reliability</h3>
+      <p>We are committed to delivering consistent, trustworthy outcomes for clients and candidates.</p>
+    </div>
+    <div class="team-card">
+      <i class="fas fa-lightbulb" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
+      <h3>Empowerment</h3>
+      <p>Providing tools, mentorship, and opportunities that allow people to succeed and grow.</p>
+    </div>
+    <div class="team-card">
+      <i class="fas fa-graduation-cap" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
+      <h3>Professionalism</h3>
+      <p>We ensure high-quality service, standards, and conduct in all our operations.</p>
+    </div>
+    <div class="team-card">
+      <i class="fas fa-heart" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
+      <h3>Compassion</h3>
+      <p>We understand the needs of our clients and candidates and act with empathy and care.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; <span id="year"></span> Tshwanelo Placements Pty Ltd. All Rights Reserved.</p>
+  <p><a href="mailto:info@tshwaneloplacements.co.za">info@tshwaneloplacements.co.za</a> | <a href="tel:+27678004100">067 800 4100</a></p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
