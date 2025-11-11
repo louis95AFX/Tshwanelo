@@ -187,6 +187,17 @@ footer {
   nav.main { display: none; flex-direction: column; gap: 8px; }
   nav.main.active { display: flex; }
 }
+/* Hide hamburger by default */
+#mobile-menu-toggle {
+  display: none;
+}
+
+/* Show hamburger on small screens */
+@media (max-width: 980px) {
+  #mobile-menu-toggle {
+    display: inline-flex;
+  }
+}
 
 
   </style>
