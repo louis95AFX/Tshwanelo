@@ -183,6 +183,12 @@ footer {
   }
 }
 
+@media (max-width:980px){
+  nav.main { display: none; flex-direction: column; gap: 8px; }
+  nav.main.active { display: flex; }
+}
+
+
   </style>
 </head>
 <body>
@@ -211,6 +217,8 @@ footer {
         <a class="cta-primary" href="#contact">Get in touch</a>
       </div>
     </div>
+    <button class="icon-btn" id="mobile-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+
   </header>
 
   <main class="wrap" id="home">
@@ -502,6 +510,13 @@ footer {
       scrollToTop();
     }
     function scrollToTop(){ window.scrollTo({top:0,behavior:'smooth'}); }
+    const menuBtn = document.getElementById('mobile-menu-toggle');
+const mainNav = document.querySelector('nav.main');
+
+menuBtn.addEventListener('click', () => {
+  mainNav.classList.toggle('active');
+});
+
   </script>
 </body>
 </html>
