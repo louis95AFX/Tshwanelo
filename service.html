@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services | Tshwanelo Placements Pty Ltd</title>
-  <meta name="description" content="Explore Tshwanelo Placements' professional services including recruitment, Sage bookkeeping, and Sage training for businesses and individuals.">
+  <meta name="description" content="Explore Tshwanelo Placements' professional services including recruitment, Sage bookkeeping, Sage training, and debtors administration services for SMEs.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
   <style>
     :root {
@@ -25,6 +26,7 @@
       padding: 0;
       color: var(--text-dark);
       background: var(--bg-light);
+      scroll-behavior: smooth;
     }
 
     header {
@@ -34,6 +36,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
     }
 
     header a {
@@ -46,6 +49,18 @@
     .nav-links {
       display: flex;
       gap: 1.5rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+      transition: 0.3s;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
 
     .hero {
@@ -94,6 +109,7 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
       padding: 2rem;
       transition: all 0.3s ease;
+      text-align: left;
     }
 
     .service-card:hover {
@@ -118,6 +134,7 @@
       color: #444;
       line-height: 1.6;
       font-size: 1rem;
+      margin-bottom: 1rem;
     }
 
     .cta-section {
@@ -185,12 +202,13 @@
       justify-content: center;
       font-size: 24px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       z-index: 999;
     }
 
     .whatsapp-float:hover {
       transform: scale(1.1);
+      box-shadow: 0 0 15px #25D366;
     }
 
     @media (max-width: 768px) {
@@ -199,6 +217,23 @@
       }
       .hero p {
         font-size: 1rem;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--primary);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 8px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
       }
     }
   </style>
@@ -218,40 +253,62 @@
         <a href="management.html">Management</a>
         <a href="#contact">Contact</a>
       </div>
+      <div class="hamburger"><i class="fas fa-bars"></i></div>
     </nav>
   </header>
 
   <section class="hero">
     <h1>Our Professional Services</h1>
-    <p>From recruitment to Sage bookkeeping and training, Tshwanelo Placements provides trusted, people-centered business solutions designed for growth, empowerment, and excellence.</p>
+    <p>From recruitment to Sage bookkeeping, training, and debtors administration, Tshwanelo Placements provides trusted, people-centered business solutions designed for growth, empowerment, and excellence.</p>
   </section>
 
   <section class="services-section">
     <h2>What We Offer</h2>
     <div class="service-grid">
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-up">
         <i class="fas fa-people-group"></i>
         <h3>Recruitment & Placements</h3>
         <p>We help businesses find the right people for the right roles — efficiently and professionally. Whether you’re looking for temporary staff, permanent employees, or specialized talent, we handle the process from start to finish.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-up">
         <i class="fas fa-book"></i>
         <h3>Sage Bookkeeping Services</h3>
         <p>Our bookkeeping team uses Sage Accounting to ensure your business finances are accurate and compliant. From reconciliations to payroll and financial reporting, we make sure your numbers work for you.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-up">
         <i class="fas fa-graduation-cap"></i>
         <h3>Sage Training</h3>
         <p>We provide hands-on Sage training for individuals and businesses who want to master Sage software. Our practical sessions are designed to build real-world accounting and bookkeeping skills that boost efficiency and confidence.</p>
+      </div>
+
+      <div class="service-card" data-aos="fade-up">
+        <i class="fas fa-briefcase"></i>
+        <h3>Debtors Administration Services for SMEs</h3>
+        <p>Take control of your cash flow — without the cost of full-time staff. We provide freelance debtors administration support to help SMEs get paid faster and maintain accurate books.</p>
+        <ul style="text-align:left; margin-top: 1rem; padding-left: 1.2rem; font-size: 0.95rem; color: #555;">
+          <li>Invoicing & Billing</li>
+          <li>Customer Account Management</li>
+          <li>Collections & Follow-Ups</li>
+          <li>Statement Preparation</li>
+          <li>Debtors Age Analysis & Reporting</li>
+          <li>Payment Allocation & Reconciliation</li>
+          <li>Credit Control Support</li>
+          <li>Dispute Management</li>
+          <li>Cash Flow Forecasting</li>
+          <li>Reporting & Insights</li>
+        </ul>
+        <p style="margin-top:1rem; font-weight:600; color:var(--accent);">
+          ✅ Affordable, accurate, and professional — helping SMEs improve cash flow
+        </p>
       </div>
     </div>
   </section>
 
   <section class="cta-section" id="contact">
     <h2>Ready to Partner with Tshwanelo Placements?</h2>
-    <p>Book a professional consultation today and let’s discuss how we can support your goals — whether it’s through recruitment, bookkeeping, or Sage training.</p>
+    <p>Book a professional consultation today and let’s discuss how we can support your goals — whether it’s through recruitment, bookkeeping, Sage training, or debtors administration.</p>
     <a href="index.html#contact" class="btn">Book a Consultation</a>
   </section>
 
@@ -265,8 +322,17 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
+    AOS.init({ duration: 800 });
+
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
   </script>
 
 </body>
