@@ -4,11 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Management Team | Tshwanelo Placements Pty Ltd</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #004aad;
@@ -17,12 +15,17 @@
       --text-dark: #222;
     }
 
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
       color: var(--text-dark);
       background: var(--bg-light);
+      overflow-x: hidden;
     }
 
     header {
@@ -32,6 +35,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
     header a {
@@ -39,6 +45,11 @@
       text-decoration: none;
       font-weight: 600;
       letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+
+    header a:hover {
+      color: var(--accent);
     }
 
     .nav-links {
@@ -46,58 +57,74 @@
       gap: 1.5rem;
     }
 
+    /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, var(--primary), #0096ff);
+      background: linear-gradient(to right, rgba(0, 74, 173, 0.8), rgba(0, 119, 255, 0.6)),
+                  url('https://images.unsplash.com/photo-1531497865144-0464ef8fb9d2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      padding: 5rem 2rem;
+      padding: 7rem 2rem;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;
+      animation: fadeIn 1.5s ease;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 1rem;
+      font-weight: 800;
     }
 
     .hero p {
       max-width: 700px;
       margin: 0 auto;
-      line-height: 1.6;
-      font-size: 1.1rem;
+      line-height: 1.7;
+      font-size: 1.15rem;
+      font-weight: 400;
     }
 
+    /* Sections */
     .section {
       padding: 4rem 2rem;
       max-width: 1100px;
       margin: 0 auto;
       text-align: center;
+      animation: fadeInUp 1s ease;
     }
 
     .section h2 {
       color: var(--primary);
       margin-bottom: 2rem;
-      font-size: 2rem;
+      font-size: 2.2rem;
+      font-weight: 700;
     }
 
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    /* Team Grid */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
       margin-top: 3rem;
-      text-align: center;
     }
 
     .team-card {
       background: #fff;
       border-radius: 16px;
-      padding: 2rem 1rem;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      animation: fadeInUp 1.2s ease;
     }
 
     .team-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .team-card img {
@@ -110,14 +137,42 @@
 
     .team-card h3 {
       color: var(--primary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-size: 1.25rem;
+      font-weight: 700;
     }
 
     .team-card p {
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.6;
+      color: #444;
     }
 
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #20b955;
+      transform: scale(1.1);
+    }
+
+    /* Footer */
     footer {
       background: #001f3f;
       color: #fff;
@@ -132,16 +187,39 @@
       font-weight: 600;
     }
 
+    footer .social-icons {
+      margin-top: 1rem;
+    }
+
+    footer .social-icons a {
+      color: #fff;
+      margin: 0 0.5rem;
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    footer .social-icons a:hover {
+      color: var(--accent);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -162,7 +240,7 @@
 
 <section class="hero">
   <h1>Meet Our Management Team</h1>
-  <p>Our leadership is dedicated to excellence, integrity, and empowering both our clients and candidates. Learn about the individuals guiding Tshwanelo Placements to success.</p>
+  <p>Our leadership team is committed to excellence, integrity, and empowering people through opportunity and trust.</p>
 </section>
 
 <section class="section">
@@ -176,9 +254,9 @@
   </div>
 </section>
 
-<section class="section background-light">
+<section class="section">
   <h2>Management Philosophy</h2>
-  <p>Our management team is people-focused, prioritizing strong relationships, transparent communication, and ethical decision-making. We believe in mentoring, guidance, and providing a supportive environment for both clients and candidates to thrive.</p>
+  <p>We believe in people-first leadership — building transparent relationships, prioritizing ethical decision-making, and mentoring the next generation of professionals. Our management team promotes collaboration, trust, and long-term success for clients and candidates alike.</p>
 </section>
 
 <section class="section">
@@ -197,29 +275,37 @@
     <div class="team-card">
       <i class="fas fa-lightbulb" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
       <h3>Empowerment</h3>
-      <p>Providing tools, mentorship, and opportunities that allow people to succeed and grow.</p>
+      <p>Providing mentorship, training, and opportunities that allow people to thrive.</p>
     </div>
     <div class="team-card">
       <i class="fas fa-graduation-cap" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
       <h3>Professionalism</h3>
-      <p>We ensure high-quality service, standards, and conduct in all our operations.</p>
+      <p>We uphold the highest standards in service, conduct, and communication.</p>
     </div>
     <div class="team-card">
       <i class="fas fa-heart" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
       <h3>Compassion</h3>
-      <p>We understand the needs of our clients and candidates and act with empathy and care.</p>
+      <p>We understand people’s needs and act with empathy, fairness, and respect.</p>
     </div>
   </div>
 </section>
 
-<footer>
+<footer id="contact">
   <p>&copy; <span id="year"></span> Tshwanelo Placements Pty Ltd. All Rights Reserved.</p>
   <p><a href="mailto:info@tshwaneloplacements.co.za">info@tshwaneloplacements.co.za</a> | <a href="tel:+27678004100">067 800 4100</a></p>
+  <div class="social-icons">
+    <a href="https://wa.me/27623304354" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+  </div>
 </footer>
+
+<a href="https://wa.me/27623304354" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>

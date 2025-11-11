@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Tshwanelo Placements Pty Ltd</title>
+  <title>Tshwanelo Placements Pty Ltd | Recruitment & Staffing Solutions</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
   <style>
     :root {
       --primary: #004aad;
@@ -47,24 +48,41 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--primary), #0096ff);
+      position: relative;
+      background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 74, 173, 0.8)),
+        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      padding: 5rem 2rem;
+      padding: 6rem 2rem;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 1rem;
+      font-weight: 800;
     }
 
     .hero p {
       max-width: 700px;
-      margin: 0 auto;
+      margin: 0 auto 2rem auto;
       line-height: 1.6;
       font-size: 1.1rem;
+    }
+
+    .hero .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .hero .btn:hover {
+      background: #ffae00;
     }
 
     .section {
@@ -80,46 +98,73 @@
       font-size: 2rem;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .about-copy p, .about-copy li {
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-
-    .about-copy ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .founder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 3rem;
+    .about-intro {
       text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+      line-height: 1.7;
     }
 
-    .founder img {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card i {
+      color: var(--accent);
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
-    .brand-values, .five-things {
+    .cta-section {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 2rem;
+      border-radius: 30px;
+      margin: 3rem auto;
+      max-width: 1000px;
+    }
+
+    .cta-section h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .cta-section a:hover {
+      background: #ffae00;
+    }
+
+    .values-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
+      gap: 1.5rem;
     }
 
     .value-card {
@@ -155,6 +200,23 @@
       font-weight: 600;
     }
 
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 16px;
+      font-size: 1.8rem;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .whatsapp-float:hover {
+      background: #20c056;
+    }
+
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 2rem;
@@ -162,81 +224,83 @@
       .hero p {
         font-size: 1rem;
       }
-      .founder {
-        text-align: center;
-      }
     }
   </style>
 </head>
-<body>
 
+<body>
 <header>
   <div class="logo">
     <a href="index.html"><strong>Tshwanelo Placements</strong></a>
   </div>
   <nav>
     <div class="nav-links">
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="service.html">Services</a>
-      <a href="about.html" class="active">About Us</a>
+      <a href="about.html">About Us</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>About Tshwanelo Placements Pty Ltd</h1>
-  <p>We are a people-centered recruitment and staffing agency dedicated to connecting reliable talent with meaningful employment opportunities across South Africa. We specialize in domestic, hospitality, and administrative placements, ensuring professionalism, trust, and long-term partnerships.</p>
+  <h1>Building Careers. Empowering Businesses.</h1>
+  <p>Connecting South Africa’s top talent with trusted employers. Tshwanelo Placements delivers professional recruitment and staffing solutions that drive growth, trust, and excellence.</p>
+  <a href="#contact" class="btn">Get In Touch</a>
 </section>
 
 <section class="section">
-  <h2>Our Story</h2>
-  <div class="about-grid">
-    <div class="about-copy">
-      <p>Tshwanelo Placements was born from witnessing capable individuals, especially women, struggle to find stable jobs despite their skills. We exist to bridge that gap — offering fair, honest, and supportive placement solutions.</p>
-      <p>Our ideal clients are professional households and businesses seeking reliable and skilled staff who value peace of mind, trust, and respectful engagement. Our affordable, once-off placement fees make the recruitment process transparent, stress-free, and effective.</p>
+  <h2>Who We Are</h2>
+  <div class="about-intro">
+    <p>Tshwanelo Placements (Pty) Ltd is a professional recruitment and staffing agency based in South Africa. We specialize in connecting capable and trustworthy candidates with businesses and households seeking excellence and reliability. Our process is transparent, ethical, and people-centered — ensuring long-term partnerships between clients and job seekers.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <i class="fa-solid fa-user-tie"></i>
+      <h4>Recruitment</h4>
+      <p>We connect skilled professionals to the right opportunities, ensuring mutual growth and satisfaction.</p>
     </div>
-    <div class="about-copy">
-      <p>We focus not just on filling roles, but building relationships. Our approach is personal, empathetic, and guided by integrity. We provide mentorship and guidance to job seekers, ensuring that every placement is meaningful and successful.</p>
+    <div class="service-card">
+      <i class="fa-solid fa-handshake"></i>
+      <h4>Staffing Solutions</h4>
+      <p>Providing businesses with reliable staffing options tailored to operational needs.</p>
+    </div>
+    <div class="service-card">
+      <i class="fa-solid fa-house-user"></i>
+      <h4>Domestic & Hospitality Placements</h4>
+      <p>Matching trained domestic and hospitality professionals with trusted employers.</p>
     </div>
   </div>
 </section>
 
-<section class="section background-light">
-  <h2>Brand Values</h2>
-  <div class="brand-values">
-    <div class="value-card"><h4>Integrity</h4><p>We uphold ethical standards in every engagement.</p></div>
-    <div class="value-card"><h4>Reliability</h4><p>Delivering trustworthy and transparent services.</p></div>
-    <div class="value-card"><h4>Empowerment</h4><p>Helping clients and candidates grow through opportunities.</p></div>
-    <div class="value-card"><h4>Professionalism</h4><p>Maintaining high-quality service in every placement.</p></div>
-    <div class="value-card"><h4>Compassion</h4><p>Understanding and supporting our clients and candidates.</p></div>
+<section class="section">
+  <h2>Why Choose Tshwanelo Placements?</h2>
+  <div class="values-grid">
+    <div class="value-card"><h4>Integrity</h4><p>We operate with honesty and transparency in every engagement.</p></div>
+    <div class="value-card"><h4>Professionalism</h4><p>We maintain excellence from screening to placement.</p></div>
+    <div class="value-card"><h4>Empowerment</h4><p>We empower candidates and clients to succeed together.</p></div>
+    <div class="value-card"><h4>Compassion</h4><p>We value people — our greatest asset — and build careers with care.</p></div>
   </div>
 </section>
 
-<section class="section">
-  <h2>Five Things We Stand For</h2>
-  <div class="five-things">
-    <div class="value-card"><p>Empowering job seekers through fair employment opportunities.</p></div>
-    <div class="value-card"><p>Delivering trustworthy and transparent recruitment services.</p></div>
-    <div class="value-card"><p>Providing personalized placements that suit client & candidate needs.</p></div>
-    <div class="value-card"><p>Supporting women and youth in accessing sustainable work.</p></div>
-    <div class="value-card"><p>Upholding ethical standards in every engagement.</p></div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Meet Our Founder & CEO</h2>
-  <div class="founder">
-    <img src="founder.jpg" alt="Rosie Ramorei - CEO of Tshwanelo Placements" />
-    <h3>Rosie Ramorei</h3>
-    <p>Driven by a passion for empowering others, Rosie founded Tshwanelo Placements to create fair, dignified, and life-changing employment opportunities. Her leadership is guided by compassion, integrity, and excellence — making a positive impact on countless lives.</p>
-  </div>
+<section class="cta-section" id="contact">
+  <h3>Ready to Hire or Get Hired?</h3>
+  <p>Whether you're looking for trusted staff or a new career opportunity, Tshwanelo Placements is here to help.</p>
+  <a href="https://wa.me/27623304354" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
 </section>
 
 <footer>
   <p>&copy; <span id="year"></span> Tshwanelo Placements Pty Ltd. All Rights Reserved.</p>
-  <p><a href="mailto:info@tshwaneloplacements.co.za">info@tshwaneloplacements.co.za</a> | <a href="tel:+27678004100">067 800 4100</a></p>
+  <p><a href="mailto:info@tshwaneloplacements.co.za">info@tshwaneloplacements.co.za</a> | <a href="tel:+27623304354">+27 62 330 4354</a></p>
 </footer>
+
+<a href="https://wa.me/27623304354" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();

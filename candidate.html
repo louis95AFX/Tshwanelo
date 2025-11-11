@@ -4,11 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For Candidates | Tshwanelo Placements Pty Ltd</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #004aad;
@@ -17,12 +15,17 @@
       --text-dark: #222;
     }
 
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
       color: var(--text-dark);
       background: var(--bg-light);
+      overflow-x: hidden;
     }
 
     header {
@@ -32,6 +35,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
     header a {
@@ -39,6 +45,11 @@
       text-decoration: none;
       font-weight: 600;
       letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+
+    header a:hover {
+      color: var(--accent);
     }
 
     .nav-links {
@@ -46,38 +57,46 @@
       gap: 1.5rem;
     }
 
+    /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, var(--primary), #0096ff);
+      background: linear-gradient(to right, rgba(0, 74, 173, 0.8), rgba(0, 119, 255, 0.6)),
+                  url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: #fff;
       text-align: center;
-      padding: 5rem 2rem;
+      padding: 7rem 2rem;
       border-bottom-left-radius: 50px;
       border-bottom-right-radius: 50px;
+      animation: fadeIn 1.5s ease;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 1rem;
+      font-weight: 800;
     }
 
     .hero p {
       max-width: 700px;
       margin: 0 auto;
-      line-height: 1.6;
-      font-size: 1.1rem;
+      line-height: 1.7;
+      font-size: 1.15rem;
+      font-weight: 400;
     }
 
+    /* Section */
     .section {
       padding: 4rem 2rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       text-align: center;
+      animation: fadeInUp 1.2s ease;
     }
 
     .section h2 {
       color: var(--primary);
       margin-bottom: 2rem;
-      font-size: 2rem;
+      font-size: 2.2rem;
+      font-weight: 700;
     }
 
     .section p {
@@ -86,26 +105,62 @@
       font-size: 1.1rem;
     }
 
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefit-card i {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    /* Form */
     .form-grid {
       display: grid;
       gap: 1.5rem;
       text-align: left;
+      margin-top: 2rem;
     }
 
     .form-grid input,
     .form-grid textarea,
     .form-grid select {
       width: 100%;
-      padding: 0.8rem 1rem;
+      padding: 0.9rem 1rem;
       border-radius: 8px;
       border: 1px solid #ccc;
       font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .form-grid input:focus,
+    .form-grid textarea:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
     }
 
     .form-grid button {
       background: var(--accent);
       color: #fff;
-      padding: 0.8rem 1.6rem;
+      padding: 0.9rem 1.6rem;
       border-radius: 8px;
       border: none;
       font-weight: 600;
@@ -118,32 +173,7 @@
       transform: scale(1.05);
     }
 
-    .benefits {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-      text-align: left;
-    }
-
-    .benefit-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 1.8rem;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .benefit-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .benefit-card i {
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 0.8rem;
-    }
-
+    /* Footer */
     footer {
       background: #001f3f;
       color: #fff;
@@ -158,18 +188,64 @@
       font-weight: 600;
     }
 
+    footer .social-icons {
+      margin-top: 1rem;
+    }
+
+    footer .social-icons a {
+      color: #fff;
+      margin: 0 0.5rem;
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    footer .social-icons a:hover {
+      color: var(--accent);
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #20b955;
+      transform: scale(1.1);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
     }
   </style>
 </head>
-<body>
 
+<body>
 <header>
   <div class="logo">
     <a href="index.html"><strong>Tshwanelo Placements</strong></a>
@@ -187,7 +263,7 @@
 
 <section class="hero">
   <h1>Opportunities for Candidates</h1>
-  <p>Are you looking for meaningful employment or career growth? Tshwanelo Placements connects qualified and reliable talent with trusted employers across South Africa. Submit your profile today and take the first step toward a rewarding placement.</p>
+  <p>Are you looking for meaningful employment or career growth? Tshwanelo Placements connects skilled professionals with trusted employers across South Africa. Submit your profile today and take the first step toward a rewarding placement.</p>
 </section>
 
 <section class="section">
@@ -196,47 +272,57 @@
     <div class="benefit-card">
       <i class="fas fa-handshake"></i>
       <h4>Trusted Connections</h4>
-      <p>We match you with reputable employers who value your skills and professionalism.</p>
+      <p>We match you with reputable employers who value your skills and integrity.</p>
     </div>
     <div class="benefit-card">
       <i class="fas fa-user-tie"></i>
-      <h4>Professional Growth</h4>
-      <p>We help you advance your career with meaningful placements and skill development.</p>
+      <h4>Career Advancement</h4>
+      <p>We help you grow through strategic placements that align with your aspirations.</p>
     </div>
     <div class="benefit-card">
       <i class="fas fa-bullseye"></i>
-      <h4>Targeted Placements</h4>
-      <p>We take time to understand your strengths, goals, and preferences to ensure the right fit.</p>
+      <h4>Precision Matching</h4>
+      <p>We ensure every placement fits your qualifications, goals, and strengths.</p>
     </div>
     <div class="benefit-card">
       <i class="fas fa-people-arrows"></i>
-      <h4>Personalized Support</h4>
-      <p>We provide guidance, mentorship, and ongoing support throughout your placement journey.</p>
+      <h4>Dedicated Support</h4>
+      <p>Our consultants guide and support you throughout your employment journey.</p>
     </div>
   </div>
 </section>
 
 <section class="section">
   <h2>Submit Your CV</h2>
-  <p>Fill out the form below with your professional details and we will contact you with suitable opportunities.</p>
+  <p>Fill in your details below and our recruitment team will reach out with suitable opportunities.</p>
 
   <form id="candidateForm" class="form-grid">
     <input type="text" id="candName" name="candName" placeholder="Full Name" required>
     <input type="email" id="candEmail" name="candEmail" placeholder="Professional Email" required>
-    <input type="tel" id="candPhone" name="candPhone" placeholder="Contact Phone Number" required>
-    <textarea id="candMessage" name="candMessage" placeholder="Brief professional bio and key skills (e.g., Sage proficiency, childcare, cleaning)" rows="4"></textarea>
-    <button type="submit">Submit Your Profile</button>
+    <input type="tel" id="candPhone" name="candPhone" placeholder="Contact Number" required>
+    <textarea id="candMessage" name="candMessage" placeholder="Brief professional bio and key skills..." rows="4"></textarea>
+    <button type="submit">Submit Profile</button>
   </form>
 </section>
 
-<footer>
+<footer id="contact">
   <p>&copy; <span id="year"></span> Tshwanelo Placements Pty Ltd. All Rights Reserved.</p>
-  <p><a href="mailto:info@tshwaneloplacements.co.za">info@tshwaneloplacements.co.za</a> | <a href="tel:+27678004100">067 800 4100</a></p>
+  <p><a href="mailto:info@tshwaneloplacements.co.za">info@tshwaneloplacements.co.za</a> | 
+     <a href="tel:+27678004100">067 800 4100</a></p>
+
+  <div class="social-icons">
+    <a href="https://wa.me/27623304354" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+  </div>
 </footer>
+
+<a href="https://wa.me/27623304354" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>

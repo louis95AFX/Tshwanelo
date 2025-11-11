@@ -3,231 +3,179 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tshwanelo Placements Pty Ltd — Recruitment, Sage Bookkeeping & Training</title>
+  <title>Tshwanelo Placements — Recruitment • Bookkeeping • Training</title>
 
   <!-- Google Font + Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
     :root{
-      --bg:#0f1724;
-      --card:#ffffff;
+      --navy:#06203a;
+      --navy-2:#08304a;
       --muted:#6b7280;
-      --glass: rgba(255,255,255,0.07);
-      --accent1: #006bb3;
-      --accent2: #00c2d6;
-      --accent3: #ffd166;
-      --radius: 14px;
-      --container: 1100px;
-      --ease: 400ms cubic-bezier(.2,.9,.2,1);
+      --accent:#d4af37; /* gold */
+      --teal:#0fb5c7;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.06);
+      --radius:12px;
+      --container:1100px;
+      --ease:300ms cubic-bezier(.2,.9,.2,1);
+      --hero-img: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background: linear-gradient(180deg,#071025 0%, #071933 40%, #08102a 100%);
-      color:#e6eef7;
+      font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+      color:#0b1b2a;
+      background: linear-gradient(180deg,#f6f8fb 0%, #eef5f9 100%);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       line-height:1.45;
-      -webkit-tap-highlight-color:transparent;
     }
 
-    /* layout container */
     .wrap{width:94%;max-width:var(--container);margin:0 auto}
 
-    /* =========== Header =========== */
+    /* Header */
     header.site-header{
-      position:sticky;top:12px;z-index:999;
-      display:flex;align-items:center;justify-content:center;
-      pointer-events:auto;
+      position:sticky;top:14px;z-index:999;
+      display:flex;align-items:center;justify-content:center;padding:10px 0;
+      backdrop-filter: blur(6px);
     }
     .nav{
       width:100%;max-width:var(--container);
-      margin:auto;background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-      border-radius:16px;padding:10px 14px;backdrop-filter: blur(8px);
-      display:flex;align-items:center;gap:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);
+      margin:auto;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+      border-radius:16px;padding:10px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 10px 30px rgba(12,24,40,0.06);
     }
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:58px;height:58px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,0.06)}
-    .brand h3{font-size:1rem;margin:0;color:#fff;font-weight:700}
-    nav.main{margin-left:auto;display:flex;align-items:center;gap:18px}
-    nav.main a{color:var(--accent1);font-weight:600;padding:8px 10px;border-radius:8px;transition:var(--ease);display:inline-block}
-    nav.main a.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#021025;box-shadow:0 8px 18px rgba(0,100,170,0.18)}
-    .nav-cta{margin-left:12px;display:flex;gap:8px;align-items:center}
-    .icon-btn{
-      background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:10px;color:#e6eef7;cursor:pointer
-    }
+    .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
+    .brand img{width:56px;height:56px;object-fit:cover;border-radius:10px;border:1px solid rgba(12,24,40,0.04)}
+    .brand h3{font-size:1rem;margin:0;color:var(--navy);font-weight:700}
+    nav.main{margin-left:auto;display:flex;align-items:center;gap:14px}
+    nav.main a{color:var(--navy);font-weight:600;padding:8px 10px;border-radius:8px;transition:var(--ease);text-decoration:none}
+    nav.main a:hover{background:rgba(11,27,42,0.04)}
+    .cta-primary{background:linear-gradient(90deg,var(--accent),#f0c96b);padding:9px 14px;border-radius:10px;color:#071425;font-weight:700;border:none;cursor:pointer}
+    .icon-btn{background:transparent;border:1px solid rgba(10,20,30,0.05);padding:8px;border-radius:8px;color:var(--navy);cursor:pointer}
 
-    /* mobile nav toggle */
-    .hamburger{display:none;background:none;border:none;color:inherit;font-size:1.2rem}
-
-    /* =========== HERO =========== */
+    /* HERO */
     .hero{
-      margin-top:28px;
-      border-radius:20px;padding:48px 28px;
-      background:
-        linear-gradient(180deg, rgba(1,8,18,0.56), rgba(2,20,48,0.56)),
-        radial-gradient(800px 300px at 10% 10%, rgba(0,194,214,0.08), transparent 10%),
-        linear-gradient(120deg, rgba(0,119,182,0.06), rgba(255,209,102,0.03)),
-        url('naaaav.jpg');
-      background-size:cover;
-      box-shadow:0 20px 60px rgba(0,0,0,0.6);
-      display:grid;
-      grid-template-columns: 1fr 420px;
-      gap:28px;align-items:center;
+      margin-top:22px;border-radius:14px;padding:48px 28px;
+      background-image:
+        linear-gradient(180deg, rgba(5,18,30,0.55), rgba(5,18,30,0.55)),
+        var(--hero-img);
+      background-size:cover;background-position:center;
+      color:#fff;box-shadow:0 18px 40px rgba(9,20,30,0.12);
+      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;
       overflow:hidden;
     }
-
-    .hero-left h1{
-      font-size:2.2rem;color:#fff;margin:0 0 12px 0;line-height:1.05;
-      text-shadow: 0 6px 26px rgba(2,6,23,0.6);
-    }
-    .hero-left p.lead{color:rgba(230,238,247,0.9);margin-bottom:18px;font-size:1.02rem}
+    .hero-left h1{font-size:2.2rem;margin:0 0 12px 0;line-height:1.05;font-weight:700;letter-spacing:-0.2px}
+    .hero-left p.lead{color:rgba(255,255,255,0.9);margin-bottom:18px;font-size:1.02rem;font-weight:500}
     .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;font-weight:700;
-      cursor:pointer;border:none;transition:transform var(--ease),box-shadow var(--ease)
-    }
-    .btn-primary{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#021025;box-shadow:0 12px 30px rgba(0,170,210,0.14)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:#fff}
-
-    .quick-contact{margin-top:18px;color:var(--muted);font-size:0.95rem}
-    .quick-contact a{color:#fff;font-weight:700;text-decoration:none}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer;border:none;transition:transform var(--ease),box-shadow var(--ease)}
+    .btn-white{background:rgba(255,255,255,0.95);color:var(--navy)}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.12);color:#fff}
 
     .hero-right{
-      align-self:stretch;display:flex;flex-direction:column;gap:12px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.04);
+      align-self:stretch;display:flex;flex-direction:column;gap:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);
     }
-    .service-card{display:flex;gap:12px}
-    .service-card img{width:120px;height:120px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,0.06)}
-    .service-card h4{margin:0;color:#fff}
-    .service-card ul{margin:8px 0 0 16px;color:var(--muted);font-size:0.95rem}
+    .service-card{display:flex;gap:12px;align-items:flex-start}
+    .service-card img{width:110px;height:96px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.06)}
+    .service-card h4{margin:0;color:#fff;font-size:1.05rem}
+    .service-card ul{margin:8px 0 0 16px;color:rgba(255,255,255,0.9);font-size:0.95rem}
 
-    /* =========== SERVICES =========== */
-    .section{margin-top:48px;padding:22px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+    /* Sections */
+    section.section{margin-top:32px;padding:32px;border-radius:12px;background:#fff;box-shadow:0 12px 30px rgba(12,24,40,0.03)}
     .section .title-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .section h2{margin:0;color:var(--accent3);font-size:1.35rem}
-    .section p.lead{margin:8px 0 18px 0;color:rgba(230,238,247,0.9)}
+    .section h2{margin:0;color:var(--navy);font-size:1.35rem}
+    .section p.lead{margin:8px 0 18px 0;color:var(--muted)}
 
-    .cards{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px;
-    }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
-      transition:transform var(--ease), box-shadow var(--ease);
-      transform-origin:center;backdrop-filter: blur(6px);
-    }
-    .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,0.5)}
-    .card .icon{
-      width:56px;height:56px;border-radius:12px;background:linear-gradient(90deg,var(--accent1),var(--accent2));
-      display:flex;align-items:center;justify-content:center;color:#021025;font-size:20px;margin-bottom:12px;box-shadow:0 8px 22px rgba(0,140,180,0.12)
-    }
-    .card h3{margin:0 0 8px 0;color:#fff;font-size:1.05rem}
+    /* Cards grid */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+    .card{padding:18px;border-radius:10px;border:1px solid rgba(12,24,40,0.04);transition:transform var(--ease), box-shadow var(--ease);background:linear-gradient(180deg,#fff,#fbfcfe)}
+    .card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(11,27,42,0.06)}
+    .card .icon{width:56px;height:56px;border-radius:10px;background:linear-gradient(90deg,var(--navy),var(--navy-2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;margin-bottom:12px}
+    .card h3{margin:0 0 8px 0;color:var(--navy);font-size:1.05rem}
     .card p{color:var(--muted);margin:0 0 12px 0}
-    .card a.cta-link{font-weight:700;color:var(--accent2);text-decoration:none}
+    .card a.cta-link{font-weight:700;color:var(--navy);text-decoration:none}
 
-    /* =========== ABOUT / VALUES / FOUNDER =========== */
-    .about-grid{display:grid;grid-template-columns: 1fr 420px;gap:20px;align-items:start}
-    .about-card{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03)}
-    .about-card h3{color:var(--accent3);margin-bottom:8px}
-    .bullets{margin:10px 0 0 16px;color:var(--muted)}
-    .values{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .pill{background:rgba(255,255,255,0.04);padding:8px 12px;border-radius:999px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,0.02)}
+    /* Two column panels */
+    .two-col{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:16px;align-items:start}
+    .panel{padding:18px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfcfe);border:1px solid rgba(12,24,40,0.04);color:var(--muted)}
+    .panel h4{color:var(--navy);margin-top:0}
 
-    .founder{
-      display:flex;gap:12px;align-items:center;padding:14px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.03)
-    }
-    .founder img{width:84px;height:84px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,255,255,0.05)}
-    .founder h4{margin:0;color:#fff}
-    .founder p{margin:6px 0 0 0;color:var(--muted);font-size:0.95rem}
+    /* Jobs list */
+    .job-list{display:grid;gap:10px}
+    .job{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;border:1px solid rgba(12,24,40,0.04);background:#fff}
+    .job .left{display:flex;gap:12px;align-items:center}
+    .job .meta{color:var(--muted);font-size:0.95rem}
+    .tag{background:rgba(3,115,146,0.08);color:var(--teal);padding:6px 10px;border-radius:999px;font-weight:700;font-size:0.85rem}
 
-    /* =========== WHY, DIFFERENT, COMPETITORS =========== */
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px}
-    .panel{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+    /* Forms */
+    form.contact-form{display:grid;gap:10px;padding:0}
+    input,textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(12,24,40,0.08);background:#fff;color:var(--navy)}
+    input::placeholder, textarea::placeholder{color:var(--muted)}
+    button[type="submit"]{padding:12px 16px;border-radius:10px;border:none;background:linear-gradient(90deg,var(--accent),#f0c96b);color:#071425;font-weight:700;cursor:pointer}
 
-    .panel h4{color:#fff;margin-top:0}
-
-    /* =========== CANDIDATE FORM =========== */
-    form.contact-form{display:grid;gap:10px;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));border:1px solid rgba(255,255,255,0.03)}
-    input,textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#e6eef7}
-    input::placeholder, textarea::placeholder{color:rgba(230,238,247,0.45)}
-    button[type="submit"]{width:max-content;padding:12px 18px;border-radius:12px;border:none;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#021025;font-weight:800;cursor:pointer}
-
-    /* map placeholder */
-    .map{height:200px;border-radius:12px;background:linear-gradient(90deg, rgba(0,119,182,0.07), rgba(0,194,214,0.06));display:flex;align-items:center;justify-content:center;color:var(--muted);border:1px dashed rgba(255,255,255,0.03)}
-
-    /* =========== FOOTER =========== */
-    footer{margin-top:32px;padding:28px;border-radius:12px;background:linear-gradient(180deg,#021025,#021025);color:rgba(255,255,255,0.85)}
+    /* Footer */
+    footer{margin-top:32px;padding:28px;border-radius:12px;background:#071427;color:rgba(255,255,255,0.92)}
     .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
-    .socials a{margin-right:10px;color:var(--accent2);font-size:1.1rem}
+    .footer-grid a{color:#fff;text-decoration:none}
 
-    /* responsiveness */
+    /* WhatsApp floating */
+    .whatsapp-float{
+      position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,#25d366,#128c7e);
+      color:#fff;border-radius:999px;padding:14px 16px;box-shadow:0 10px 30px rgba(18,140,126,0.18);
+      display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;z-index:1000
+    }
+    .whatsapp-float i{font-size:18px}
+
+    /* Responsive */
     @media (max-width:980px){
-      .hero{grid-template-columns:1fr; padding:36px}
-      .about-grid{grid-template-columns:1fr}
+      .hero{grid-template-columns:1fr; padding:32px}
+      .two-col{grid-template-columns:1fr}
       .cards{grid-template-columns:repeat(2,1fr)}
       nav.main{display:none}
-      .hamburger{display:inline-flex}
     }
     @media (max-width:640px){
       .cards{grid-template-columns:1fr}
-      .founder{flex-direction:row;gap:12px}
+      .brand h3{font-size:0.95rem}
+      .hero-left h1{font-size:1.6rem}
+      .hero-right{order:2}
+      .hero-left{order:1}
+      .wrap{width:96%}
     }
 
-    /* small utilities & animation */
-    .fade-in{opacity:0;transform:translateY(18px);transition:opacity 600ms ease, transform 600ms ease}
-    .fade-in.visible{opacity:1;transform:none}
-    .muted{color:var(--muted)}
-    /* Remove underline from nav links */
-.site-header .main a {
-  text-decoration: none;
-  color: inherit; /* keeps current color */
-  transition: color 0.3s ease; /* smooth hover effect */
-}
-
-.site-header .main a:hover,
-.site-header .main a.active {
-  color: #90cae6; /* optional hover color for accent */
-  text-decoration: none; /* ensure no underline on hover */
-}
-
+    /* subtle animations */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity 500ms var(--ease), transform 500ms var(--ease)}
+    .reveal.visible{opacity:1;transform:none}
   </style>
 </head>
 <body>
 
   <header class="site-header">
-    <div class="nav wrap">
+    <div class="nav wrap" role="navigation" aria-label="Main">
       <a class="brand" href="#home" aria-label="Tshwanelo Placements Home">
-        <img src="item3.png" alt="Tshwanelo Placements logo">
+        <img src="item3.png" alt="Tshwanelo logo">
         <div>
-      </a>
-      <h3>Tshwanelo Placements</h3>
-          <!-- <div style="font-size:12px;color:rgba(230,238,247,0.65)">Recruitment • Bookkeeping • Sage Training</div> -->
+          <h3>Tshwanelo Placements</h3>
+          <div style="font-size:12px;color:var(--muted)">Recruitment • Bookkeeping • Sage Training</div>
         </div>
+      </a>
 
-      <nav class="main" aria-label="Main navigation">
-        <a href="#home" class="active">Home</a>
-        <a href="service.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="candidate.html">Candidates</a>
-        <a href="managment.html">Managment</a>
-        <a href="#contact">Contact</a>
+      <nav class="main" aria-label="Primary navigation">
+        <a href="managment.html">MANAGMENT</a>
+        <a href="service.html">SERVICES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="candidate.html">CANDIDATES</a>
+        <a href="#contact">CONTACTS</a>
       </nav>
 
-      <div class="nav-cta">
-        <button class="icon-btn" title="Call us" aria-label="Call 0678004100" onclick="location.href='tel:0678004100'">
-          <i class="fa-solid fa-phone"></i>
-        </button>
-        <button class="icon-btn" title="Email" aria-label="Email" onclick="location.href='mailto:info@tshwaneloplacements.co.za'">
-          <i class="fa-solid fa-envelope"></i>
-        </button>
-        <button class="hamburger" aria-label="Open menu" onclick="toggleMobile()"> <i class="fa-solid fa-bars"></i> </button>
+      <div style="margin-left:12px;display:flex;gap:8px;align-items:center">
+        <button class="icon-btn" title="Call us" onclick="location.href='tel:+27623304354'"><i class="fa-solid fa-phone"></i></button>
+        <a href="mailto:info@tshwaneloplacements.co.za" class="icon-btn" title="Email us"><i class="fa-solid fa-envelope"></i></a>
+        <a class="cta-primary" href="#contact">Get in touch</a>
       </div>
     </div>
   </header>
@@ -236,174 +184,168 @@
     <!-- HERO -->
     <section class="hero" aria-label="Hero">
       <div class="hero-left">
-        <h1>Connecting the right talent with the right opportunities — across South Africa.</h1>
-        <p class="lead">Precision • Professionalism • Empowerment — we place people, manage finances with Sage, and upskill teams for stronger businesses.</p>
+        <h1>Connecting trusted talent with reliable employers across South Africa</h1>
+        <p class="lead">Professional recruitment, Sage bookkeeping support and practical training — tailored for SMEs, busy households, and corporate clients.</p>
 
         <div class="hero-cta">
-          <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-            <i class="fa-solid fa-calendar-plus"></i> Book a Service
-          </button>
-          <button class="btn btn-ghost" onclick="document.getElementById('candidates').scrollIntoView({behavior:'smooth'})">
-            <i class="fa-solid fa-file-arrow-up"></i> Submit CV
-          </button>
+          <a class="btn btn-white" href="#contact"><i class="fa-solid fa-envelope"></i> Request Consultation</a>
+          <a class="btn btn-outline" href="#jobs"><i class="fa-solid fa-briefcase"></i> View Open Roles</a>
         </div>
 
-        <div class="quick-contact muted" style="margin-top:14px">
-          <div><strong>Phone:</strong> <a href="tel:0678004100">067 800 4100</a></div>
-          <div><strong>Email:</strong> <a href="mailto:info@tshwaneloplacements.co.za">info@tshwaneloplacements.co.za</a></div>
+        <div style="margin-top:18px;display:flex;gap:18px;flex-wrap:wrap;color:rgba(255,255,255,0.9)">
+          <div><strong>Phone:</strong> <a style="color:#fff;text-decoration:none" href="tel:+27623304354">+27 62 330 4354</a></div>
+          <div><strong>Email:</strong> <a style="color:#fff;text-decoration:none" href="mailto:info@tshwaneloplacements.co.za">info@tshwaneloplacements.co.za</a></div>
         </div>
       </div>
 
       <aside class="hero-right" aria-hidden="false">
         <div class="service-card">
-          <img src="item1.jpg" alt="Professional smiling helper">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=60" alt="Team at work">
           <div>
-            <h4>Our Core Placement Specializations</h4>
-            <ul class="muted">
-              <li>Domestic Helpers • Nannies • Caregivers</li>
-              <li>Professional Cleaners • Drivers • Aupairs</li>
-              <li>Temporary & Permanent placements</li>
+            <h4>Core Services</h4>
+            <ul style="margin:8px 0 0 16px;color:#fff">
+              <li>Domestic & Professional Placements</li>
+              <li>Full-cycle Recruitment & Vetting</li>
+              <li>Sage Bookkeeping & Payroll</li>
+              <li>Hands-on Sage Training</li>
             </ul>
           </div>
         </div>
 
-        <div class="about-card muted" style="font-size:0.96rem">
-          <strong style="color:#fff">Bookkeeping & Sage Support</strong>
-          <div style="margin-top:8px">Reliable Sage bookkeeping for SMEs — reconciliations, payroll, reporting and compliance. We keep your books accurate so you can grow.</div>
-          <div style="margin-top:10px;font-weight:700;color:var(--accent2)">From R: tailored packages available — enquire now</div>
+        <div style="margin-top:8px;padding:12px;border-radius:8px;background:rgba(255,255,255,0.04);color:#fff">
+          <strong>Tailored packages for Employers</strong>
+          <div style="margin-top:8px;color:rgba(255,255,255,0.9)">Flexible engagement models — temporary, contract or permanent placement. Compliance & onboarding support included.</div>
         </div>
       </aside>
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="section" aria-labelledby="servicesTitle">
+    <section id="services" class="section reveal" aria-labelledby="servicesTitle">
       <div class="title-row">
         <h2 id="servicesTitle">Our Services</h2>
-        <div class="muted">Practical. Trustworthy. Person-centred.</div>
+        <div class="muted">Professional, reliable and people-centred.</div>
       </div>
-      <p class="lead">We help businesses find skilled people, manage financial operations using Sage, and train teams for success.</p>
+      <p class="lead">We combine deep local knowledge with robust processes to match the right person, to the right role — quickly and transparently.</p>
 
       <div class="cards">
-        <article class="card fade-in">
+        <article class="card">
           <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
           <h3>Recruitment & Placements</h3>
-          <p>We source, vet and place trusted domestic workers, nannies, caregivers, cleaners, aupairs and drivers — temporary or full-time.</p>
+          <p>End-to-end recruitment for domestic, hospitality and administrative roles. Background checks, reference verification and placement follow-up.</p>
           <a class="cta-link" href="#contact">Enquire about Recruitment →</a>
         </article>
 
-        <article class="card fade-in">
+        <article class="card">
           <div class="icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-          <h3>Sage Bookkeeping Services</h3>
-          <p>Accurate bookkeeping tailored for SMEs: monthly reconciliations, payroll administration, financial reporting and compliance using Sage.</p>
+          <h3>Sage Bookkeeping</h3>
+          <p>Monthly reconciliations, payroll, tax-ready reporting and Sage configuration for small and medium businesses.</p>
           <a class="cta-link" href="#contact">Enquire about Bookkeeping →</a>
         </article>
 
-        <article class="card fade-in">
+        <article class="card">
           <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
-          <h3>Sage Training</h3>
-          <p>Hands-on Sage training for individuals and teams — practical sessions that build real-world accounting skills and confidence.</p>
+          <h3>Sage Training & Upskilling</h3>
+          <p>Practical hands-on Sage training for teams and individuals with real-world exercises and continued support.</p>
           <a class="cta-link" href="#contact">Enquire about Training →</a>
         </article>
       </div>
     </section>
 
-    <!-- ABOUT + FOUNDER -->
-    <section id="about" class="section" aria-labelledby="aboutTitle">
-      <div style="display:flex;justify-content:space-between;gap:18px;align-items:flex-start">
-        <div style="flex:1">
-          <h2 id="aboutTitle" style="color:var(--accent3)">About Tshwanelo Placements</h2>
-          <p class="muted">Tshwanelo Placements is a people-centered recruitment and staffing agency dedicated to connecting reliable talent with meaningful employment across South Africa. We specialise in domestic, hospitality, and administrative placements while offering bookkeeping and Sage training services.</p>
+    <!-- EMPLOYER + JOBSEEKER CTA -->
+    <section class="section reveal" aria-labelledby="serveTitle">
+      <div class="title-row">
+        <h2 id="serveTitle">For Employers & Job Seekers</h2>
+        <div class="muted">Two clear paths — one trusted partner.</div>
+      </div>
 
-          <div class="about-grid" style="margin-top:12px">
-            <div class="about-card fade-in">
-              <h3>Our Promise</h3>
-              <p class="muted">We charge affordable, once-off placement fees. No hidden costs. We take time to understand both employers and candidates to ensure long-term, respectful matches.</p>
-
-              <ul class="bullets muted" style="margin-top:10px">
-                <li>Integrity & Professionalism in every placement</li>
-                <li>Transparent pricing — once-off fees</li>
-                <li>Empowerment through training & mentorship</li>
-              </ul>
-
-              <div style="margin-top:12px">
-                <strong>Office Address</strong>
-                <div class="muted">Ext 15, 8 Incubation Drive, Riverside View, Fourways, Johannesburg</div>
-              </div>
-            </div>
-
-            <aside style="width:420px">
-              <div class="founder fade-in">
-                <img src="item4.jpg" alt="Rosie Ramorei, Founder & CEO">
-                <div>
-                  <h4>Rosie Ramorei</h4>
-                  <div class="muted" style="font-size:0.95rem">Founder & CEO — driven to create fair, dignified employment opportunities. Experienced in community-focused placements and mentorship.</div>
-                </div>
-              </div>
-
-              <div style="margin-top:12px" class="values">
-                <div class="pill">Integrity</div>
-                <div class="pill">Reliability</div>
-                <div class="pill">Empowerment</div>
-                <div class="pill">Professionalism</div>
-                <div class="pill">Compassion</div>
-              </div>
-            </aside>
-          </div>
+      <div class="two-col" style="margin-top:16px">
+        <div style="padding:18px;border-radius:10px;border:1px solid rgba(12,24,40,0.04);background:#fff">
+          <h3 style="color:var(--navy)">Employers</h3>
+          <p class="muted">Tell us your requirements and we'll deliver pre-screened, reference-checked candidates who fit your culture and needs.</p>
+          <ul style="color:var(--muted);margin-top:8px">
+            <li>Dedicated account manager</li>
+            <li>Onboarding & compliance support</li>
+            <li>Flexible contracts (temp / perm)</li>
+          </ul>
+          <div style="margin-top:12px"><a class="cta-primary" href="#contact">Request Employer Support</a></div>
         </div>
 
-        <!-- quick facts -->
-        <aside style="width:320px">
-          <div class="panel fade-in">
-            <h4>Origin</h4>
-            <p class="muted">Born from witnessing skilled people struggle to find stable work — Tshwanelo bridges the gap between job seekers (especially women) and trustworthy employers.</p>
-          </div>
-
-          <div class="panel fade-in" style="margin-top:12px">
-            <h4>What Makes Us Different</h4>
-            <p class="muted">We build relationships, mentor job seekers, and focus on ethical, long-term placements — not quick hires.</p>
+        <aside class="panel">
+          <h4 style="margin-top:0">Job Seekers</h4>
+          <p class="muted">Submit your CV and profile — we match you to roles that respect your skills and career goals.</p>
+          <div style="margin-top:12px">
+            <a class="btn btn-white" href="#candidates"><i class="fa-solid fa-file-arrow-up"></i> Submit CV</a>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- WHY + FIVE THINGS + COMPETITORS -->
-    <section class="section">
-      <div class="two-col">
-        <div class="panel fade-in">
-          <h4>Why Come To Us</h4>
-          <p class="muted">Clients choose us for our hands-on support, personal approach and a reputation for honest, effective matching. We prioritise safety, fit and ongoing satisfaction.</p>
+    <!-- JOB LISTINGS -->
+    <section id="jobs" class="section reveal" aria-labelledby="jobsTitle">
+      <div class="title-row">
+        <h2 id="jobsTitle">Open Roles (Preview)</h2>
+        <div class="muted">Updated weekly — submit your interest.</div>
+      </div>
+      <p class="lead">Below are sample vacancies. Click apply to start an informal chat with our recruitment team.</p>
 
-          <h4 style="margin-top:10px">Ideal Client</h4>
-          <p class="muted">Working professionals or families (aged 30–55), urban/suburban, middle to upper income, who value reliability and a smooth recruitment process.</p>
+      <div class="job-list">
+        <div class="job">
+          <div class="left">
+            <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(90deg,var(--navy),var(--navy-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">DH</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy)">Domestic Helper — Fourways</div>
+              <div class="meta">Full-time · Immediate start · R6,000 - R8,000</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <div class="tag">Apply</div>
+            <a href="#contact" style="color:var(--muted);text-decoration:none"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </div>
 
-        <div class="panel fade-in">
-          <h4>Five Things We Stand For</h4>
-          <ul class="muted">
-            <li>Empowering job seekers with fair opportunity</li>
-            <li>Delivering trustworthy and transparent services</li>
-            <li>Personalised placements matching both sides</li>
-            <li>Supporting women & youth access to sustainable work</li>
-            <li>Upholding strong ethical standards</li>
-          </ul>
+        <div class="job">
+          <div class="left">
+            <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(90deg,var(--navy),var(--navy-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">AC</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy)">Admin Clerk — Sandton</div>
+              <div class="meta">Contract · Part-time · R10,000 - R12,000</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <div class="tag">Apply</div>
+            <a href="#contact" style="color:var(--muted);text-decoration:none"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
 
-          <h4 style="margin-top:12px">Main Competitors</h4>
-          <p class="muted">All4Women Placements · Domestic Staffing SA · Career Custodians · Workforce Staffing</p>
+        <div class="job">
+          <div class="left">
+            <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(90deg,var(--navy),var(--navy-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">BK</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy)">Sage Bookkeeper — Remote/Hybrid</div>
+              <div class="meta">Part-time · Experience with Sage required</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <div class="tag">Apply</div>
+            <a href="#contact" style="color:var(--muted);text-decoration:none"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CANDIDATES FORM -->
-    <section id="candidates" class="section">
-      <h2 style="color:var(--accent3)">Opportunity for Candidates</h2>
-      <p class="muted">Submit your CV and a short profile — we’ll match you to suitable roles that respect your skills and ambitions.</p>
+    <!-- CANDIDATE FORM -->
+    <section id="candidates" class="section reveal" aria-labelledby="candTitle">
+      <div class="title-row">
+        <h2 id="candTitle">Submit Your Profile</h2>
+        <div class="muted">We’ll match you to suitable vacancies.</div>
+      </div>
 
-      <form id="candidateForm" class="contact-form" onsubmit="handleCandidateSubmit(event)">
+      <form id="candidateForm" class="contact-form" onsubmit="handleCandidateSubmit(event)" style="margin-top:12px">
         <input type="text" id="candName" name="candName" placeholder="Full Name" required>
-        <input type="email" id="candEmail" name="candEmail" placeholder="Professional Email" required>
-        <input type="tel" id="candPhone" name="candPhone" placeholder="Contact Phone Number" required>
+        <input type="email" id="candEmail" name="candEmail" placeholder="Email" required>
+        <input type="tel" id="candPhone" name="candPhone" placeholder="Phone (e.g. +27...)" required>
         <select id="candRole" name="candRole" required>
-          <option value="" disabled selected>What role are you interested in?</option>
+          <option value="" disabled selected>Role of interest</option>
           <option>Domestic helper</option>
           <option>Nanny / Childcare</option>
           <option>Caregiver</option>
@@ -411,62 +353,56 @@
           <option>Driver</option>
           <option>Administrative / Office</option>
         </select>
-        <textarea id="candMessage" name="candMessage" placeholder="Brief professional bio and key skills (e.g., Sage, childcare, cleaning)" rows="4"></textarea>
-        <button type="submit">Submit Profile</button>
+        <textarea id="candMessage" name="candMessage" placeholder="Short professional summary, skills (e.g., Sage, childcare)"></textarea>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px">
+          <button type="submit">Submit Profile</button>
+          <a class="btn btn-outline" href="https://wa.me/27623304354" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
       </form>
     </section>
 
-    <!-- CONTACT + MAP -->
-    <section id="contact" class="section">
-  <h2 style="color:var(--accent3)">Initiate a Consultation</h2>
-  <p class="muted">Use the form to tell us what you need, or contact our team directly.</p>
-
-  <div class="two-col" style="margin-top:12px; display: flex; flex-wrap: wrap; gap: 2rem;">
-    
-    <!-- Contact Form -->
-    <form id="contactForm" class="contact-form" style="flex:1; min-width: 280px;" onsubmit="handleContactSubmit(event)">
-      <input type="text" id="name" name="name" placeholder="Your Full Name / Company Name" required>
-      <input type="email" id="email" name="email" placeholder="Your Email Address" required>
-      <input type="tel" id="phone" name="phone" placeholder="Contact Phone Number" required>
-      <select id="serviceSelect" name="serviceSelect" required>
-        <option value="" disabled selected>Select Service of Interest...</option>
-        <option value="Recruitment">Recruitment & Placements</option>
-        <option value="Bookkeeping">Sage Bookkeeping</option>
-        <option value="Training">Sage Training</option>
-        <option value="General">General Inquiry</option>
-      </select>
-      <textarea id="message" name="message" placeholder="Please detail your specific requirement or inquiry..." rows="4"></textarea>
-      <button type="submit">Send Professional Inquiry</button>
-    </form>
-
-    <!-- Contact Info & Map -->
-    <div style="flex:1; min-width: 280px;">
-      <!-- Contact Details Panel -->
-      <div class="panel" style="margin-bottom:12px; padding: 1rem; background:#f4f4f4; border-radius:8px;">
-        <strong>Contact</strong>
-        <p class="muted" style="margin-top:6px">
-          <strong>Phone:</strong> <a href="tel:0678004100">067 800 4100</a><br>
-          <strong>Email:</strong> <a href="mailto:info@tshwaneloplacements.co.za">info@tshwaneloplacements.co.za</a><br>
-          <strong>Address:</strong> Ext 15, 8 Incubation Drive, Riverside View, Fourways, Johannesburg
-        </p>
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal" aria-labelledby="contactTitle">
+      <div class="title-row">
+        <h2 id="contactTitle">Contact & Consultation</h2>
+        <div class="muted">Request a consultation or ask about packages.</div>
       </div>
 
-      <!-- Google Maps Embed -->
-      <div style="border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.867092924707!2d28.00243951502612!3d-26.018616983560453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9563f6b7f1ab7f%3A0x4e8b80c6b7f4d123!2s8%20Incubation%20Drive%2C%20Riverside%20View%2C%20Fourways%2C%20Johannesburg!5e0!3m2!1sen!2sza!4v1700100000000!5m2!1sen!2sza"
-          width="100%"
-          height="300"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </div>
+      <div class="two-col" style="margin-top:12px">
+        <form id="contactForm" class="contact-form" onsubmit="handleContactSubmit(event)" style="padding-right:6px">
+          <input type="text" id="name" name="name" placeholder="Your Name or Company" required>
+          <input type="email" id="email" name="email" placeholder="Email address" required>
+          <input type="tel" id="phone" name="phone" placeholder="Phone (e.g. +27...)" required>
+          <select id="serviceSelect" name="serviceSelect" required>
+            <option value="" disabled selected>Service of interest...</option>
+            <option value="Recruitment">Recruitment & Placements</option>
+            <option value="Bookkeeping">Sage Bookkeeping</option>
+            <option value="Training">Sage Training</option>
+            <option value="General">General Inquiry</option>
+          </select>
+          <textarea id="message" name="message" placeholder="Tell us about your requirement..." rows="4"></textarea>
+          <button type="submit">Send Inquiry</button>
+        </form>
 
-  </div>
-</section>
+        <aside style="padding-left:6px">
+          <div class="panel">
+            <strong>Contact</strong>
+            <p class="muted" style="margin-top:6px">
+              <strong>Phone:</strong> <a href="tel:+27623304354">+27 62 330 4354</a><br>
+              <strong>Email:</strong> <a href="mailto:info@tshwaneloplacements.co.za">info@tshwaneloplacements.co.za</a><br>
+              <strong>Address:</strong> Ext 15, 8 Incubation Drive, Riverside View, Fourways, Johannesburg
+            </p>
+          </div>
+
+          <div style="margin-top:12px;border-radius:8px;overflow:hidden;box-shadow:0 6px 18px rgba(12,24,40,0.06)">
+            <!-- Replace the iframe src if you have an updated Google Maps embed -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.867092924707!2d28.00243951502612!3d-26.018616983560453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9563f6b7f1ab7f%3A0x4e8b80c6b7f4d123!2s8%20Incubation%20Drive%2C%20Riverside%20View%2C%20Fourways%2C%20Johannesburg!5e0!3m2!1sen!2sza!4v1700100000000!5m2!1sen!2sza"
+              width="100%" height="220" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </aside>
+      </div>
+    </section>
 
   </main>
 
@@ -477,14 +413,14 @@
         <strong>Tshwanelo Placements Pty Ltd</strong>
         <div class="muted" style="margin-top:6px">Ext 15, 8 Incubation Drive, Riverside View, Fourways, Johannesburg</div>
         <div style="margin-top:8px" class="muted"><strong>Email:</strong> info@tshwaneloplacements.co.za</div>
-        <div class="muted"><strong>Phone:</strong> 067 800 4100</div>
+        <div class="muted"><strong>Phone:</strong> +27 62 330 4354</div>
       </div>
 
       <div>
         <strong>Quick Links</strong>
         <div style="margin-top:8px" class="muted">
-          <a href="service.html">Our Services</a><br>
-          <a href="#candidates">Submit CV</a><br>
+          <a href="#services">Our Services</a><br>
+          <a href="#jobs">Open Roles</a><br>
           <a href="#contact">Contact</a>
         </div>
       </div>
@@ -499,48 +435,40 @@
     </div>
   </footer>
 
-  <!-- Minimal JS for interactivity -->
+  <!-- WhatsApp floating -->
+  <a class="whatsapp-float" href="https://wa.me/27623304354" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i> Chat +27 62 330 4354
+  </a>
+
   <script>
     // set year
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // small visibility on scroll for elements with .fade-in
+    // reveal on scroll
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); e.target.classList.remove('fade-in'); }
+        if (e.isIntersecting) { e.target.classList.add('visible'); e.target.classList.remove('reveal'); }
       });
     }, {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
-
-    // mobile nav toggle (simple)
-    function toggleMobile(){
-      const nav = document.querySelector('nav.main');
-      if(!nav) return;
-      if(nav.style.display === 'flex'){ nav.style.display = 'none'; }
-      else { nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.position = 'absolute'; nav.style.right = '18px'; nav.style.top = '80px'; nav.style.background = 'linear-gradient(180deg, rgba(1,8,18,0.9), rgba(2,20,48,0.9))'; nav.style.padding='14px'; nav.style.borderRadius='12px'; }
-    }
-
-    // simple form handlers (demo) — replace with real API calls
+    // simple handlers (demo)
     function handleContactSubmit(e){
       e.preventDefault();
       const name = e.target.name.value.trim();
-      const service = e.target.serviceSelect.value || 'General';
-      alert(`Thanks ${name}! Your inquiry about "${service}" has been noted. We will contact you shortly on 067 800 4100 or via email.`);
+      const svc = e.target.serviceSelect.value || 'General';
+      alert(`Thank you ${name}. Your inquiry about "${svc}" has been received. We'll contact you on the number provided.`);
       e.target.reset();
+      scrollToTop();
     }
     function handleCandidateSubmit(e){
       e.preventDefault();
       const n = e.target.candName.value.trim();
-      alert(`Thanks ${n}! Your profile has been received. We'll be in touch about matching opportunities.`);
+      alert(`Thanks ${n}! Your profile was submitted. We'll be in touch about suitable roles.`);
       e.target.reset();
+      scrollToTop();
     }
-
-    // improve link focus outline for accessibility
-    document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
-      el.addEventListener('keydown', (ev) => { if(ev.key === 'Tab') el.style.outline = '3px solid rgba(0,194,214,0.18)'; });
-      el.addEventListener('blur', () => el.style.outline = 'none');
-    });
+    function scrollToTop(){ window.scrollTo({top:0,behavior:'smooth'}); }
   </script>
 </body>
 </html>
